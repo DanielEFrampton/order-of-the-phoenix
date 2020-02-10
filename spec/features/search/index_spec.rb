@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'As a visitor', type: :feature do
   describe 'when I visit root, select Gryffindor, and click search' do
     before(:each) do
+      @members = PotterApiService.new.get_members_for_house('Gryffindor')
+
       visit '/'
       select 'Gryffindor', from: 'house'
       click_on 'Search For Members'
@@ -17,23 +19,19 @@ RSpec.describe 'As a visitor', type: :feature do
     end
 
     describe 'And I should see a list of Gryffindor members, and for each I should see' do
-      it 'The name of the member' do
-        require "pry"; binding.pry
-        page.all('.member').each do |member|
-          require "pry"; binding.pry
+      it 'The name, role (optional), house, and patronus (optional) of the member' do
+        page.all('.member').each_with_index do |member, index|
+          within member do
+            expect(page).to have_content(@members[index].name)
+            if @members[index].patronus
+              expect(page).to have_content(@members[index].patronus)
+            end
+            if @members[index].role
+              expect(page).to have_content(@members[index].role)
+            end
+            expect(page).to have_content(@members[index].house)
+          end
         end
-      end
-
-      it 'The name of the member' do
-      end
-
-      it 'The members role (if it exists)' do
-      end
-
-      it 'The house the member belongs to' do
-      end
-
-      it 'The Patronus of the member (if it exists)' do
       end
     end
   end
