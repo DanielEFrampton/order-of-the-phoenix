@@ -27,12 +27,6 @@ RSpec.describe 'As a visitor', type: :feature do
       it 'The name of the member' do
       end
 
-      it 'The name of the member' do
-      end
-
-      it 'The name of the member' do
-      end
-
       it 'The members role (if it exists)' do
       end
 
