@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Member do
-  describe 'it can initialize with readable attributes' do
+  it 'it can initialize with readable attributes' do
     member = Member.new(name: 'Daniel Frampton',
                         house: 'Gryffindor',
                         patronus: 'Great Blue Heron',
@@ -14,7 +14,7 @@ RSpec.describe Member do
     expect(member.patronus).to eq('Great Blue Heron')
   end
 
-  describe 'it can initialize without a role' do
+  it 'it can initialize without a role' do
     member = Member.new(name: 'Daniel Frampton',
                         house: 'Gryffindor',
                         patronus: 'Great Blue Heron')
