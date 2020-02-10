@@ -33,6 +33,5 @@ RSpec.describe Member do
     expect(member).to be_instance_of(Member)
     expect(member.name).to eq('Daniel Frampton')
     expect(member.house).to eq('Gryffindor')
-    require "pry"; binding.pry
   end
 end
