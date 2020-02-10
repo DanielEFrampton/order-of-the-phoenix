@@ -13,7 +13,7 @@ RSpec.describe 'As a visitor', type: :feature do
     end
 
     it 'Then I should see a total of the number of members for that house. (21 for Gryffindor)' do
-      expect(page).to have_content("Total Order Members In Gryffindor: 21")
+      expect(page).to have_content("Total Order Members Found: 21")
     end
 
     describe 'And I should see a list of Gryffindor members, and for each I should see' do
