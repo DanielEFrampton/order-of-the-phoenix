@@ -24,4 +24,15 @@ RSpec.describe Member do
     expect(member.house).to eq('Gryffindor')
     expect(member.patronus).to eq('Great Blue Heron')
   end
+
+  it 'it can initialize without a patronus' do
+    member = Member.new(name: 'Daniel Frampton',
+                        house: 'Gryffindor',
+                        role: 'Muggle Liaison')
+
+    expect(member).to be_instance_of(Member)
+    expect(member.name).to eq('Daniel Frampton')
+    expect(member.house).to eq('Gryffindor')
+    require "pry"; binding.pry
+  end
 end
