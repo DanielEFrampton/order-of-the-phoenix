@@ -1,1 +1,17 @@
 <p>Total Order Members Found: <%= @members.count %></p>
+
+<h1>Order of the Phoenix Member Details</h1>
+<% @members.each do |member| %>
+  <section class='member'>
+    <h2><%= member.name %></h2>
+    <p>
+      House: <%= member.house %><br />
+      <% if member.role %>
+        Role: <%= member.role %><br />
+      <% end %>
+      <% if member.patronus %>
+        Patronus: <%= member.patronus %><br />
+      <% end %>
+    </p>
+  </section>
+<% end %>
