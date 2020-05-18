@@ -8,8 +8,10 @@ class PotterApiService
   private
 
     def get_members_json(house)
-      url = "/v1/characters?orderOfThePhoenix=true&house=#{house}"
-      response = api_connection.get(url)
+      response = api_connection.get('/v1/characters') do |get|
+        get.params['orderOfThePhoenix'] = true
+        get.params['house'] = house
+      end
       JSON.parse(response.body)
     end
 
