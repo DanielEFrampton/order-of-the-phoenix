@@ -6,7 +6,7 @@ ruby '2.6.3'
 gem "rails"
 gem "actionview", ">= 5.2.4.2"
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 
